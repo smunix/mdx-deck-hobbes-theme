@@ -1,0 +1,83 @@
+{
+  "name": "mdx-deck-hobbes-theme",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Custom mdx-deck theme for use in presentations",
+  "keywords": [
+    "mdx",
+    "mdx-deck",
+    "hobbes"
+  ],
+  "author": "Providence Salumu",
+  "license": "MIT",
+  "main": "src/index.js",
+  "dependencies": {
+    "mdx-deck": "^1.7.14",
+    "react": "^16.0.0",
+    "react-syntax-highlighter": "^10.1.3"
+  },
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "prettier": "^1.16.4",
+    "pretty-quick": "^1.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "plugins": [
+      "compat",
+      "prettier",
+      "react"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true,
+        "modules": true,
+        "experimentalObjectRestSpread": true
+      }
+    },
+    "settings": {
+      "react": {
+        "pragma": "h",
+        "version": "15.6"
+      }
+    },
+    "rules": {
+      "arrow-body-style": [
+        "error",
+        "as-needed"
+      ],
+      "no-async-promise-executor": "error",
+      "prettier/prettier": "error",
+      "compat/compat": "error",
+      "react/no-unknown-property": [
+        "error",
+        {
+          "ignore": [
+            "class",
+            "for"
+          ]
+        }
+      ],
+      "react/prop-types": "off",
+      "react/display-name": "off",
+      "mocha/no-exclusive-tests": "error"
+    }
+  },
+  "eslintIgnore": [
+    "*.config.js"
+  ]
+}
