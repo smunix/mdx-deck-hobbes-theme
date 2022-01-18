@@ -10,6 +10,9 @@ import { convertTheme as toCodeSurferTheme } from "./codeSurferThemeConverter";
 import { strong } from "./Strong";
 
 const colorPrimary = "#39C0BA";
+const white = "#fffceb";
+const black = "#351e38";
+const blue = "#2d5dd7";
 
 const SlideNumber = ({ number }) => (
   <div
@@ -107,7 +110,10 @@ export const makeCodeComponent = LibCodeSurfer => {
 
 const theme = {
   ...baseTheme,
-  font: "Quicksand, sans-serif",
+  googleFont: "https://fonts.googleapis.com/css?family=Gloria+Hallelujah",
+  fonts: {
+    body: '"Gloria Hallelujah", cursive'
+  },
   prism: {
     style: syntaxTheme,
     languages: {
@@ -118,9 +124,9 @@ const theme = {
   },
   colors: {
     ...baseTheme.colors,
-    text: "#F0F0F0",
-    background: "#22242A",
-    link: "#296aff",
+    text: black,
+    background: white,
+    link: blue,
     code: colorPrimary
   },
   css: {
